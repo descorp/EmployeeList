@@ -6,6 +6,7 @@
 //  Copyright © 2018 Backbase. All rights reserved.
 //
 
+#import "UITableViewCell+Identifier.h"
 #import "BaseEmployeeCellTableViewCell.h"
 #import "BaseEmployeeCellTableViewCell+Internal.h"
 #import "Employee+Currency.h"
@@ -22,12 +23,24 @@
 
 @implementation BaseEmployeeCellTableViewCell
 
-- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder {
-    self.nameLable = [[UILabel new] init];
-    self.salaryLable = [[UILabel new] init];
-    self.birthYearLable = [[UILabel new] init];
-    [self setup];
-    return [super awakeAfterUsingCoder:aDecoder];
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier: reuseIdentifier];
+    if (self) {
+        self.nameLable = [[UILabel new] initWithFrame:CGRectZero];
+        [self.nameLable setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:self.nameLable];
+        
+        self.salaryLable = [[UILabel new] initWithFrame:CGRectZero];
+        [self.salaryLable setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:self.salaryLable];
+        
+        self.birthYearLable = [[UILabel new] initWithFrame:CGRectZero];
+        [self.birthYearLable setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:self.birthYearLable];
+        
+        [self setup];
+    }
+    return self;
 }
 
 - (void)updateWithEmployee:(Employee*)value {

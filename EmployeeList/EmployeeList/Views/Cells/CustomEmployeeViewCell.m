@@ -22,10 +22,13 @@
 }
 
 - (void)setup {
-    [self addVisualConstraints:@"V:|-(10)-[name]"];
-    [self addVisualConstraints:@"V:|-(10)-[birthYear]"];
-    [self addVisualConstraints:@"H:|-(5)-[name]-(10)-[birthYear]-(5)"];
-    [self addVisualConstraints:@"V:[salary]-(10)-|"];
+    [self addVisualConstraints:@"V:|-(10)-[name]-[salary]-(10)-|"];
+    [self addVisualConstraints:@"V:|-(10)-[birthYear]-|"];
+    [self addVisualConstraints:@"H:|-(5)-[name]-(10)-[birthYear]-(5)-|"];
+    [self addVisualConstraints:@"H:|-(5)-[salary]-(5)-|"];
+    [self updateConstraints];
+    
+    self.salaryLable.textAlignment = NSTextAlignmentRight;
 }
 
 - (void)addVisualConstraints:(NSString*)visualFormat {
@@ -33,6 +36,7 @@
                                                                    options:0
                                                                    metrics:nil
                                                                      views:self.views]];
+    
 }
 
 @end

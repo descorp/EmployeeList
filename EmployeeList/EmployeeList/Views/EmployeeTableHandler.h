@@ -11,6 +11,8 @@
 
 @interface EmployeeTableHandler: NSObject<UITableViewDataSource, UITableViewDelegate>
 
+- (instancetype)initWithTable:(UITableView*)tableView;
+
 - (void)updateWith:(NSArray<Employee*>*)collection;
 
 - (void)nonBlockingSort;

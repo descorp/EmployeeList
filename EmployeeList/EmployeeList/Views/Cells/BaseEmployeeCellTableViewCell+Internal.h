@@ -11,9 +11,9 @@
 
 @interface BaseEmployeeCellTableViewCell (Internal)
 
-@property (nonatomic) UILabel *nameLable;
-@property (nonatomic) UILabel *birthYearLable;
-@property (nonatomic) UILabel *salaryLable;
+@property (nonatomic, readonly) UILabel *nameLable;
+@property (nonatomic, readonly) UILabel *birthYearLable;
+@property (nonatomic, readonly) UILabel *salaryLable;
 
 - (void)setup;
 

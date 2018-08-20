@@ -10,6 +10,16 @@
 #import "BaseEmployeeCellTableViewCell+Internal.h"
 #import "Employee+Currency.h"
 
+@interface BaseEmployeeCellTableViewCell ()
+
+@property (nonatomic, readwrite) UILabel *nameLable;
+@property (nonatomic, readwrite) UILabel *birthYearLable;
+@property (nonatomic, readwrite) UILabel *salaryLable;
+
+- (void)setup;
+
+@end
+
 @implementation BaseEmployeeCellTableViewCell
 
 - (id)awakeAfterUsingCoder:(NSCoder *)aDecoder {

@@ -24,6 +24,8 @@
     self = [super init];
     if (self) {
         self.tableView = tableView;
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
         self.queue = [[NSOperationQueue alloc] init];
         self.queue.qualityOfService = NSQualityOfServiceBackground;
     }
@@ -52,11 +54,17 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return [tableView dequeueCell:CustomEmployeeViewCell.class];
+    CustomEmployeeViewCell *cell = (CustomEmployeeViewCell*)[tableView dequeueCell:CustomEmployeeViewCell.class];
+    [cell updateWithEmployee:self.cache[indexPath.item]];
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.cache.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
 }
 
 @end

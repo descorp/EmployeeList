@@ -9,7 +9,7 @@
 #import "EmployeeListViewController.h"
 #import "UITableView+Register.h"
 #import "CustomEmployeeViewCell.h"
-#import "EmployeeTableHandler.m"
+#import "EmployeeTableHandler.h"
 
 @interface EmployeeListViewController ()
 

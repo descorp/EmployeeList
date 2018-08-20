@@ -11,7 +11,7 @@
 
 @interface EmployeeListViewController : UITableViewController
 
-- (instancetype)initWithEmployeeDataSource:(NSObject<EmployeeDataSource>*)dataSource;
+- (instancetype)initWithEmployeeDataSource:(NSObject<EmployeeDataProvider>*)dataSource;
 
 @end
 

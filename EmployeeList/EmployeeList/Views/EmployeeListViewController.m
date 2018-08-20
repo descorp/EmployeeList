@@ -7,19 +7,24 @@
 //
 
 #import "EmployeeListViewController.h"
+#import "UITableView+Register.h"
+#import "CustomEmployeeViewCell.h"
+#import "EmployeeTableHandler.m"
 
 @interface EmployeeListViewController ()
 
-@property (readwrite, nonatomic) NSObject<EmployeeDataSource> *dataSource;
+@property (readwrite, nonatomic) NSObject<EmployeeDataProvider> *dataProvider;
+@property (readwrite, nonatomic) EmployeeTableHandler *tableHandler;
 
 @end
 
 @implementation EmployeeListViewController
 
-- (instancetype)initWithEmployeeDataSource:(NSObject<EmployeeDataSource> *)dataSource {    
+- (instancetype)initWithEmployeeDataSource:(NSObject<EmployeeDataProvider> *)dataProvider {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        self.dataSource = dataSource;
+        self.dataProvider = dataProvider;
+        self.tableHandler = [[EmployeeTableHandler new] initWithTable:self.tableView];
     }
     return self;
 }
@@ -31,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerCellClass:CustomEmployeeViewCell.class];
     UIRefreshControl *refreshControl = [[UIRefreshControl new] init];
     self.refreshControl = refreshControl;
     [refreshControl addTarget:self action:@selector(onRefreshRequested:) forControlEvents:UIControlEventValueChanged];
@@ -44,13 +50,16 @@
 }
 
 - (void)onRefreshRequested:(id)sender {
-    if (!self.dataSource.isUpdating) {
-        [self.dataSource update];
+    if (!self.dataProvider.isUpdating) {
+        [self.dataProvider update];
     }
 }
 
 - (void)onDataSourceUpdated:(NSNotification*)notification {
     [self.refreshControl endRefreshing];
+    
+    NSArray *data = self.dataProvider.employees;
+    [self.tableHandler updateWith:data];
 }
 
 @end

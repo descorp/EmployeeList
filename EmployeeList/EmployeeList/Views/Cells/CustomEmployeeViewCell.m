@@ -9,32 +9,30 @@
 #import "CustomEmployeeViewCell.h"
 #import "BaseEmployeeCellTableViewCell+Internal.h"
 
+@interface CustomEmployeeViewCell ()
+
+@property (nonatomic) NSDictionary *view;
+
+@end
+
 @implementation CustomEmployeeViewCell
 
+-(NSDictionary *)views {
+    return @{ @"name": self.nameLable, @"birthYear": self.nameLable, @"salary": self.nameLable };
+}
+
 - (void)setup {
-    
-    NSDictionary *view = @{
-                           @"name": self.nameLable,
-                           @"birthYear": self.nameLable,
-                           @"salary": self.nameLable,
-                           };
-    
-    [self addConstraints:  [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[name]"
+    [self addVisualConstraints:@"V:|-(10)-[name]"];
+    [self addVisualConstraints:@"V:|-(10)-[birthYear]"];
+    [self addVisualConstraints:@"H:|-(5)-[name]-(10)-[birthYear]-(5)"];
+    [self addVisualConstraints:@"V:[salary]-(10)-|"];
+}
+
+- (void)addVisualConstraints:(NSString*)visualFormat {
+    [self addConstraints:  [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                    options:0
                                                                    metrics:nil
-                                                                     views:view]];
-    [self addConstraints:  [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[birthYear]"
-                                                                   options:0
-                                                                   metrics:nil
-                                                                     views:view]];
-    [self addConstraints:  [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(5)-[name]-(10)-[birthYear]-(5)-|"
-                                                                   options:0
-                                                                   metrics:nil
-                                                                     views:view]];
-    [self addConstraints:  [NSLayoutConstraint constraintsWithVisualFormat:@"V:[salary]-(10)-|"
-                                                                   options:0
-                                                                   metrics:nil
-                                                                     views:view]];
+                                                                     views:self.views]];
 }
 
 @end

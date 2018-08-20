@@ -17,6 +17,9 @@
 		4043DAF9212863BC0034A4B6 /* Employee+Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DAF8212863BC0034A4B6 /* Employee+Currency.m */; };
 		4043DAFE212A1B040034A4B6 /* BaseEmployeeCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DAFD212A1B040034A4B6 /* BaseEmployeeCellTableViewCell.m */; };
 		4043DB01212A1F390034A4B6 /* CustomEmployeeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DB00212A1F390034A4B6 /* CustomEmployeeViewCell.m */; };
+		4043DB05212B5BCC0034A4B6 /* UITableView+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DB04212B5BCC0034A4B6 /* UITableView+Register.m */; };
+		4043DB08212B5D1D0034A4B6 /* UITableViewCell+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DB07212B5D1D0034A4B6 /* UITableViewCell+Identifier.m */; };
+		4043DB0B212B60880034A4B6 /* EmployeeTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DB0A212B60880034A4B6 /* EmployeeTableHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		4043DAFF212A1F390034A4B6 /* CustomEmployeeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomEmployeeViewCell.h; sourceTree = "<group>"; };
 		4043DB00212A1F390034A4B6 /* CustomEmployeeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEmployeeViewCell.m; sourceTree = "<group>"; };
 		4043DB02212A21DE0034A4B6 /* BaseEmployeeCellTableViewCell+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseEmployeeCellTableViewCell+Internal.h"; sourceTree = "<group>"; };
+		4043DB03212B5BCC0034A4B6 /* UITableView+Register.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Register.h"; sourceTree = "<group>"; };
+		4043DB04212B5BCC0034A4B6 /* UITableView+Register.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Register.m"; sourceTree = "<group>"; };
+		4043DB06212B5D1D0034A4B6 /* UITableViewCell+Identifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Identifier.h"; sourceTree = "<group>"; };
+		4043DB07212B5D1D0034A4B6 /* UITableViewCell+Identifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Identifier.m"; sourceTree = "<group>"; };
+		4043DB09212B60880034A4B6 /* EmployeeTableHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeTableHandler.h; sourceTree = "<group>"; };
+		4043DB0A212B60880034A4B6 /* EmployeeTableHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +147,10 @@
 			children = (
 				4043DAF7212863BC0034A4B6 /* Employee+Currency.h */,
 				4043DAF8212863BC0034A4B6 /* Employee+Currency.m */,
+				4043DB03212B5BCC0034A4B6 /* UITableView+Register.h */,
+				4043DB04212B5BCC0034A4B6 /* UITableView+Register.m */,
+				4043DB06212B5D1D0034A4B6 /* UITableViewCell+Identifier.h */,
+				4043DB07212B5D1D0034A4B6 /* UITableViewCell+Identifier.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -148,6 +161,8 @@
 				4043DAFB212A1AB80034A4B6 /* Cells */,
 				4043DACD21285C3A0034A4B6 /* EmployeeListViewController.h */,
 				4043DACE21285C3A0034A4B6 /* EmployeeListViewController.m */,
+				4043DB09212B60880034A4B6 /* EmployeeTableHandler.h */,
+				4043DB0A212B60880034A4B6 /* EmployeeTableHandler.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,13 +277,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4043DB0B212B60880034A4B6 /* EmployeeTableHandler.m in Sources */,
 				4043DAF9212863BC0034A4B6 /* Employee+Currency.m in Sources */,
 				4043DB01212A1F390034A4B6 /* CustomEmployeeViewCell.m in Sources */,
 				4043DAF52128632E0034A4B6 /* Employee.m in Sources */,
 				4043DAFE212A1B040034A4B6 /* BaseEmployeeCellTableViewCell.m in Sources */,
+				4043DB08212B5D1D0034A4B6 /* UITableViewCell+Identifier.m in Sources */,
 				4043DACF21285C3A0034A4B6 /* EmployeeListViewController.m in Sources */,
 				4043DADA21285C400034A4B6 /* main.m in Sources */,
 				4043DACC21285C3A0034A4B6 /* AppDelegate.m in Sources */,
+				4043DB05212B5BCC0034A4B6 /* UITableView+Register.m in Sources */,
 				4043DAF1212862870034A4B6 /* EmployeeDirectory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

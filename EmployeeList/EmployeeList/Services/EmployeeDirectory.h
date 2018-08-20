@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol EmployeeDataSource
+@protocol EmployeeDataProvider
 
 @property (readonly) NSArray* employees; // returns NSArray of Employee
 @property (readonly) BOOL isUpdating;
@@ -21,6 +21,6 @@
 // notification posted when the directory finishes updating
 extern NSString* const kEmployeeDirectoryDidUpdateNotification;
 
-@interface EmployeeDirectory : NSObject <EmployeeDataSource>
+@interface EmployeeDirectory : NSObject <EmployeeDataProvider>
 
 @end

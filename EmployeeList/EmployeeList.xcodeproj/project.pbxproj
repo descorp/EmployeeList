@@ -20,6 +20,7 @@
 		4043DB05212B5BCC0034A4B6 /* UITableView+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DB04212B5BCC0034A4B6 /* UITableView+Register.m */; };
 		4043DB08212B5D1D0034A4B6 /* UITableViewCell+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043DB07212B5D1D0034A4B6 /* UITableViewCell+Identifier.m */; };
 		40B5DF07212B7456009F7145 /* EmployeeTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B5DF06212B7456009F7145 /* EmployeeTableHandler.m */; };
+		40BF4EAC212CC1C70051A15B /* CurrencyCodesStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BF4EAB212CC1C70051A15B /* CurrencyCodesStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		4043DB07212B5D1D0034A4B6 /* UITableViewCell+Identifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Identifier.m"; sourceTree = "<group>"; };
 		40B5DF05212B7456009F7145 /* EmployeeTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableHandler.h; sourceTree = "<group>"; };
 		40B5DF06212B7456009F7145 /* EmployeeTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableHandler.m; sourceTree = "<group>"; };
+		40BF4EAA212CC1C70051A15B /* CurrencyCodesStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyCodesStorage.h; sourceTree = "<group>"; };
+		40BF4EAB212CC1C70051A15B /* CurrencyCodesStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrencyCodesStorage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				4043DAF2212863050034A4B6 /* DTO */,
 				4043DAEE212862540034A4B6 /* Services */,
 				4043DAF6212863810034A4B6 /* Categories */,
+				40BF4EA9212CC1830051A15B /* Utilities */,
 				4043DACA21285C3A0034A4B6 /* AppDelegate.h */,
 				4043DACB21285C3A0034A4B6 /* AppDelegate.m */,
 				4043DAD321285C400034A4B6 /* Assets.xcassets */,
@@ -177,6 +181,15 @@
 				4043DB00212A1F390034A4B6 /* CustomEmployeeViewCell.m */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		40BF4EA9212CC1830051A15B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				40BF4EAA212CC1C70051A15B /* CurrencyCodesStorage.h */,
+				40BF4EAB212CC1C70051A15B /* CurrencyCodesStorage.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +293,7 @@
 				4043DAF9212863BC0034A4B6 /* Employee+Currency.m in Sources */,
 				4043DB01212A1F390034A4B6 /* CustomEmployeeViewCell.m in Sources */,
 				4043DAF52128632E0034A4B6 /* Employee.m in Sources */,
+				40BF4EAC212CC1C70051A15B /* CurrencyCodesStorage.m in Sources */,
 				4043DAFE212A1B040034A4B6 /* BaseEmployeeCellTableViewCell.m in Sources */,
 				4043DB08212B5D1D0034A4B6 /* UITableViewCell+Identifier.m in Sources */,
 				4043DACF21285C3A0034A4B6 /* EmployeeListViewController.m in Sources */,

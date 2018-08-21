@@ -37,12 +37,12 @@
     [self.tableView reloadData];
 }
 
-- (void)nonBlockingSort {
-    __block NSArray<Employee*>* snapshot = [[NSMutableArray alloc] initWithArray:self.cache copyItems:YES];
+- (void)nonBlockingSortWith:(NSComparisonResult (^)(id  _Nonnull __strong, id  _Nonnull __strong))comparator {
+    __block NSArray<Employee*>* snapshot;
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-         snapshot = [snapshot sortedArrayUsingComparator:^NSComparisonResult(Employee* lhs, Employee* rhs) {
-            return [lhs.name compare:rhs.name];
-        }];
+        snapshot = [NSKeyedUnarchiver unarchiveObjectWithData:
+                    [NSKeyedArchiver archivedDataWithRootObject:self.cache]];
+        snapshot = [snapshot sortedArrayUsingComparator:comparator];
     }];
     [operation setCompletionBlock:^{
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -61,10 +61,6 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.cache.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
 }
 
 @end

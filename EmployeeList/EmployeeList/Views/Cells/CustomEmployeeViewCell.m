@@ -18,17 +18,23 @@
 @implementation CustomEmployeeViewCell
 
 -(NSDictionary *)views {
-    return @{ @"name": self.nameLable, @"birthYear": self.nameLable, @"salary": self.nameLable };
+    return @{ @"name": self.nameLable, @"birthYear": self.birthYearLable, @"salary": self.salaryLable };
 }
 
 - (void)setup {
-    [self addVisualConstraints:@"V:|-(10)-[name]-[salary]-(10)-|"];
-    [self addVisualConstraints:@"V:|-(10)-[birthYear]-|"];
-    [self addVisualConstraints:@"H:|-(5)-[name]-(10)-[birthYear]-(5)-|"];
-    [self addVisualConstraints:@"H:|-(5)-[salary]-(5)-|"];
-    [self updateConstraints];
+    for (UIView *subview in self.contentView.subviews) {
+        subview.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    [self addVisualConstraints:@"H:|-[name]-[salary]-|"];
+    [self addVisualConstraints:@"H:|-[birthYear(==name)]"];
+    [self addVisualConstraints:@"V:|-[name][birthYear]-|"];
+    [self.salaryLable.centerYAnchor  constraintEqualToAnchor:self.contentView.centerYAnchor].active = YES;
     
     self.salaryLable.textAlignment = NSTextAlignmentRight;
+    self.birthYearLable.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
+    self.salaryLable.font = [UIFont systemFontOfSize:17 weight:UIFontWeightSemibold];
+    //[self layoutIfNeeded];
 }
 
 - (void)addVisualConstraints:(NSString*)visualFormat {
@@ -36,7 +42,6 @@
                                                                    options:0
                                                                    metrics:nil
                                                                      views:self.views]];
-    
 }
 
 @end

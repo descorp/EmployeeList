@@ -27,16 +27,13 @@
     self = [super initWithStyle:style reuseIdentifier: reuseIdentifier];
     if (self) {
         self.nameLable = [[UILabel new] initWithFrame:CGRectZero];
-        [self.nameLable setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self addSubview:self.nameLable];
+        [self.contentView addSubview:self.nameLable];
         
         self.salaryLable = [[UILabel new] initWithFrame:CGRectZero];
-        [self.salaryLable setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self addSubview:self.salaryLable];
+        [self.contentView addSubview:self.salaryLable];
         
         self.birthYearLable = [[UILabel new] initWithFrame:CGRectZero];
-        [self.birthYearLable setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self addSubview:self.birthYearLable];
+        [self.contentView addSubview:self.birthYearLable];
         
         [self setup];
     }

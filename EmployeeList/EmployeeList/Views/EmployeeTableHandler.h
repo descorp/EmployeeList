@@ -15,6 +15,6 @@
 
 - (void)updateWith:(NSArray<Employee*>*)collection;
 
-- (void)nonBlockingSort;
+- (void)nonBlockingSortWith:(NSComparisonResult (^)(id  _Nonnull __strong, id  _Nonnull __strong))comparator;
 
 @end

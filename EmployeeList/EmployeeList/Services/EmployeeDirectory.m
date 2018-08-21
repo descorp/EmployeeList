@@ -31,12 +31,16 @@ NSString* const kEmployeeDirectoryDidUpdateNotification = @"kEmployeeDirectoryDi
                       @"Ringo", @"Dave", @"Taylor"];
     NSArray* surnames = @[@"Hawkins", @"Simpson", @"Lennon", @"Grohl", @"Hawkins", @"Jacobs",
                           @"Holmes", @"Mercury", @"Matthews"];
+    NSArray* currencies = @[@"EUR", @"USD", @"CHY", @"RUR", @"AUD", @"KZT", @"GBP", @"TRY", @"JPY"];
     NSUInteger amount = name.count*surnames.count;
     NSMutableArray* employees = [NSMutableArray arrayWithCapacity:amount];
     for(NSUInteger i=0; i<amount; i++) {
         NSString* fullName = [NSString stringWithFormat:@"%@ %@", name[random()%name.count],
                               surnames[random()%surnames.count]];
-        [employees addObject:[[Employee alloc] initWithName:fullName birthYear:1997-random()%50]];
+        [employees addObject:[[Employee alloc] initWithName:fullName
+                                                  birthYear:1997-random()%50
+                                                     salary:random()%100000
+                                                   currency:currencies[random()%currencies.count]]];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{

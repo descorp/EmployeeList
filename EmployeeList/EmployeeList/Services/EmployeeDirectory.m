@@ -31,7 +31,7 @@ NSString* const kEmployeeDirectoryDidUpdateNotification = @"kEmployeeDirectoryDi
                       @"Ringo", @"Dave", @"Taylor"];
     NSArray* surnames = @[@"Hawkins", @"Simpson", @"Lennon", @"Grohl", @"Hawkins", @"Jacobs",
                           @"Holmes", @"Mercury", @"Matthews"];
-    NSArray* currencies = @[@"EUR", @"USD", @"CHY", @"RUR", @"AUD", @"KZT", @"GBP", @"TRY", @"JPY"];
+    NSArray* currencies = @[@"EUR", @"USD", @"CHY", @"RUB", @"KZT", @"GBP", @"TRY", @"JPY", @"AZN"];
     NSUInteger amount = name.count*surnames.count;
     NSMutableArray* employees = [NSMutableArray arrayWithCapacity:amount];
     for(NSUInteger i=0; i<amount; i++) {

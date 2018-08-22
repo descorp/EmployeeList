@@ -44,7 +44,7 @@ NSString* const kSalaryCurrency = @"EUR";
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeInteger:self.birthYear forKey:@"birthYear"];
     [aCoder encodeObject:self.salary forKey:@"salary"];
-    [aCoder encodeObject:self.salary forKey:@"currencyCode"];
+    [aCoder encodeObject:self.currencyCode forKey:@"currencyCode"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
